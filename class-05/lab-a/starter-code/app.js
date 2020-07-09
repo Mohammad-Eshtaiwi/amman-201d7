@@ -51,11 +51,18 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) {
   //eslint-disable-line
+  let getSum1 = sum(a, b);
+  let getSum2 = sum(getSum1[0], c);
+  getSum2 = getSum2[0];
+  let getMul1 = multiply(a, b);
+  let getMul2 = multiply(getMul1[0], c);
+  getMul2 = getMul2[0];
+
   return [
-    a + b + c,
-    a * b * c,
-    `4 and 7 and 5 sum to ${a + b + c}.`,
-    `The product of 4 and 7 and 5 is ${a * b * c}.`,
+    getSum2,
+    getMul2,
+    `4 and 7 and 5 sum to ${getSum2}.`,
+    `The product of 4 and 7 and 5 is ${getMul2}.`,
   ];
 }
 
