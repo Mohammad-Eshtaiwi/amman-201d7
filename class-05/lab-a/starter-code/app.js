@@ -88,7 +88,7 @@ function sumArray(sumArr) {
   //eslint-disable-line
   let add = 0;
   for (let i = 0; i < sumArr.length; i++) {
-    add += sum(sumArr[i], 0)[0];
+    add = sum(sumArr[i], add)[0];
   }
   return [
     add,
