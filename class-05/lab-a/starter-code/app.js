@@ -145,21 +145,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
-
 function multiplyAnyArray(dynamicArray) {
   //eslint-disable-line
-  let multi = 1;
-  for (let i = 0; i < dynamicArray.length; i++)
-    multi *= multiply(dynamicArray[i], 1)[0];
-  console.log(
-    multi,
-    `The numbers ${testDynamicArray} have a product of ${multi}.`
-  );
+  let multi = 0;
+  for (let i = 0; i < dynamicArray.length; i++) {
+    if (i === 0) multi += multiply(dynamicArray[i], dynamicArray[i + 1])[0];
+    if (i === 1) {
+      continue;
+    }
+    multi = multiply(multi, dynamicArray[i])[0];
+  }
   return [multi, `The numbers ${testDynamicArray} have a product of ${multi}.`];
 }
-const name = () => {
-  return 1;
-};
+
 testMultiplyAnyArray(testDynamicArray);
 // Here is the test for multiplyArray(); uncomment it to run it
 
