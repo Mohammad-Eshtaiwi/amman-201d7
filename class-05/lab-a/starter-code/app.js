@@ -133,7 +133,7 @@ testMultiplyArray(testArray);
 
 /////////////////////////////////////
 /* STRETCH GOAL: Problem 6
-Write a function called multiplyAnyArray() that takes an array of numbers of any length as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
+Write a function called multiplyAnyArray() that takes an array of numbers of any length as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:pu
 
 "The numbers 1,2,3,4,5 have a product of 120."
 
@@ -145,15 +145,21 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
+console.log(testDynamicArray);
 
 function multiplyAnyArray(dynamicArray) {
   //eslint-disable-line
   let multi = 1;
-  for (let i = 0; i < dynamicArray.length; i++) multi *= dynamicArray[i];
-  return [multi, `The numbers 1,2,3,4,5 have a product of ${multi}.`];
+  for (let i = 0; i < dynamicArray.length; i++)
+    multi *= multiply(dynamicArray[i], 1)[0];
+  console.log(
+    multi,
+    `The numbers ${testDynamicArray} have a product of ${multi}.`
+  );
 }
-
+const name = () => {
+  return 1;
+};
 // Here is the test for multiplyArray(); uncomment it to run it
-testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
