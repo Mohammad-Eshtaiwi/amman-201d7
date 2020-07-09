@@ -149,7 +149,10 @@ function multiplyAnyArray(dynamicArray) {
   //eslint-disable-line
   let multi = 0;
   for (let i = 0; i < dynamicArray.length; i++) {
-    if (i === 0) multi += multiply(dynamicArray[i], dynamicArray[i + 1])[0];
+    if (i === 0) {
+      multi += multiply(dynamicArray[i], dynamicArray[i + 1])[0];
+      continue;
+    }
     if (i === 1) {
       continue;
     }
